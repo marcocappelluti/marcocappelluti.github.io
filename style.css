@@ -8,15 +8,15 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  --bg:          #f5f6f8;
-  --bg-alt:      #edf0f4;
+  --bg:          #f4f5f8;
+  --bg-alt:      #eaecf2;
   --surface:     #ffffff;
-  --border:      #dde2ea;
-  --text:        #171a1f;
-  --text-muted:  #5e6676;
-  --text-faint:  #95a0b0;
-  --accent:      #3558a0;
-  --accent-soft: #e5ecf8;
+  --border:      #d8dfe9;
+  --text:        #0f1117;
+  --text-muted:  #505a6e;
+  --text-faint:  #8c98ac;
+  --accent:      #2c52a0;
+  --accent-soft: #e3ebf8;
   --badge-pub:        #2d6a4f;
   --badge-pub-bg:     #d6f2de;
   --badge-review:     #7b5e00;
@@ -32,15 +32,15 @@
 }
 
 [data-theme="dark"] {
-  --bg:          #131518;
-  --bg-alt:      #1b1e24;
-  --surface:     #21252c;
-  --border:      #2d3340;
-  --text:        #e6ecf5;
-  --text-muted:  #8e98ad;
-  --text-faint:  #5c6477;
-  --accent:      #7aadde;
-  --accent-soft: #19283d;
+  --bg:          #0f1117;
+  --bg-alt:      #181c24;
+  --surface:     #1e2330;
+  --border:      #2a3044;
+  --text:        #e8edf8;
+  --text-muted:  #8a97b0;
+  --text-faint:  #55627a;
+  --accent:      #6b9fe0;
+  --accent-soft: #172038;
   --badge-pub:        #74c69d;
   --badge-pub-bg:     #1a3828;
   --badge-review:     #f0c14b;
@@ -187,19 +187,19 @@ main {
 }
 
 .hero-photo {
-  width: 210px;
-  height: 210px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
   border: 3px solid var(--border);
   flex-shrink: 0;
-  box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
 }
 
 .hero-photo-placeholder {
-  width: 210px;
-  height: 210px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   background: var(--bg-alt);
   border: 3px solid var(--border);
@@ -213,25 +213,26 @@ main {
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-size: clamp(2.6rem, 5.5vw, 3.8rem);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
   color: var(--text);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .hero-sub {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
 .hero-sub span {
   color: var(--text-faint);
-  margin: 0 6px;
+  margin: 0 8px;
 }
 
 .hero-tagline {
@@ -239,9 +240,37 @@ main {
   font-size: 1rem;
   font-weight: 400;
   color: var(--text-muted);
-  margin-bottom: 32px;
-  line-height: 1.75;
+  margin-bottom: 14px;
+  line-height: 1.78;
   max-width: 600px;
+}
+
+.hero-greeting {
+  display: block;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.hero-supervisors {
+  font-size: 0.88rem;
+  color: var(--text-faint);
+  margin-bottom: 32px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero-supervisors a {
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color var(--transition), border-color var(--transition);
+}
+.hero-supervisors a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  opacity: 1;
+  text-decoration: none;
 }
 
 .hero-links {
@@ -254,19 +283,20 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  padding: 7px 14px;
+  padding: 7px 16px;
   border: 1px solid var(--border);
   border-radius: 20px;
   color: var(--text-muted);
   text-decoration: none;
-  transition: border-color var(--transition), color var(--transition), background var(--transition);
+  transition: border-color var(--transition), color var(--transition), background var(--transition), box-shadow var(--transition);
 }
 .hero-link:hover {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-soft);
+  box-shadow: 0 2px 8px rgba(44, 82, 160, 0.10);
   opacity: 1;
   text-decoration: none;
 }
@@ -358,14 +388,16 @@ main {
 
 .paper-title {
   font-family: var(--font-serif);
-  font-size: 1.08rem;
-  line-height: 1.4;
+  font-size: 1.1rem;
+  line-height: 1.42;
   color: var(--text);
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 .paper-title a {
   color: inherit;
   text-decoration: none;
+  transition: color var(--transition);
 }
 .paper-title a:hover { color: var(--accent); text-decoration: none; opacity: 1; }
 
@@ -430,11 +462,11 @@ main {
 .abstract-body {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.35s ease, opacity 0.25s ease;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
   opacity: 0;
 }
 .abstract-body.open {
-  max-height: 600px;
+  max-height: 1200px;
   opacity: 1;
 }
 
@@ -624,8 +656,8 @@ footer {
   }
 
   .hero-photo, .hero-photo-placeholder {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     margin: 0 auto;
   }
 

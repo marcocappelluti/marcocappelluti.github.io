@@ -303,12 +303,22 @@ main {
 .hero-link svg { flex-shrink: 0; }
 
 /* --- Research Section --- */
-.research-intro {
-  font-size: 1.05rem;
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.research-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
   color: var(--text-muted);
-  margin-bottom: 16px;
-  max-width: 620px;
-  line-height: 1.7;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 13px;
 }
 
 .thesis-block {
